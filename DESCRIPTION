@@ -1,0 +1,29 @@
+Package: MetricFishR
+Type: Package
+Title: Integrated Morphometric Pipeline for Fish Diversity
+        (Descriptive, Inferential Statistics, Wilks, PCA)
+Version: 0.1.0
+Authors@R: person("OWO Nicolas Roland",
+    email = "owonicolvs3457@users.noreply.github.com",
+    role = c("aut", "cre"))
+Description: 7-step morphometric pipeline (without discriminant factor
+    analysis) for the analysis of fish diversity: descriptive statistics
+    exported to Excel, inferential analysis with selection of significant
+    variables, Bartlett's identity test, Pearson correlation matrix with
+    interactive exclusion, Wilks' lambda test with adjustable F threshold,
+    and principal component analysis (PCA) with plot export.
+License: MIT + file LICENSE
+URL: https://github.com/owonicolvs3457/MetricFishR
+BugReports: https://github.com/owonicolvs3457/MetricFishR/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Depends: R (>= 4.1.0)
+Imports: factoextra, FactoMineR, FSA, ggcorrplot, ggplot2, grDevices,
+        openxlsx, psych, RColorBrewer, stats, tcltk, utils
+Suggests: rlang (>= 1.1.7), testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0
+NeedsCompilation: no
+Packaged: 2026-07-23 14:47:36 UTC; HP
+Author: OWO Nicolas Roland [aut, cre]
+Maintainer: OWO Nicolas Roland <owonicolvs3457@users.noreply.github.com>
