@@ -24,19 +24,6 @@ remotes::install_github("owonicolvs3457/MetricFishR")
 library(MetricFishR)
 ```
 
-Alternative, from a local source archive (`MetricFishR_0.1.0.tar.gz`, built with
-`R CMD build .`): install the dependencies first, then the archive.
-
-```r
-deps <- c(
-  "factoextra", "FactoMineR", "FSA", "ggcorrplot", "ggplot2", "openxlsx",
-  "psych", "RColorBrewer"
-)
-miss <- setdiff(deps, rownames(installed.packages()))
-if (length(miss)) install.packages(miss, dependencies = TRUE)
-
-install.packages("path/to/MetricFishR_0.1.0.tar.gz", repos = NULL, type = "source")
-```
 
 ## The 7-step pipeline
 
