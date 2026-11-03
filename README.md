@@ -11,12 +11,23 @@ correlation, Wilks' lambda test and principal component analysis
 
 Package developed by **OWO Nicolas Roland**, an R package adaptation of the
 `morphometric.R` pipeline and the statistical counterpart of the ImageJ/Fiji plugin
-[RMetricFishJ](https://github.com/owonicolvs3457).
+[MetricFishJ](https://github.com/owonicolvs3457).
 
 ## Installation
 
 ```r
-# 1. Automatically install missing dependencies
+# 1. Install the package from GitHub (dependencies are installed automatically)
+if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
+remotes::install_github("owonicolvs3457/MetricFishR")
+
+# 2. Load the package
+library(MetricFishR)
+```
+
+Alternative, from a local source archive (`MetricFishR_0.1.0.tar.gz`, built with
+`R CMD build .`): install the dependencies first, then the archive.
+
+```r
 deps <- c(
   "factoextra", "FactoMineR", "FSA", "ggcorrplot", "ggplot2", "openxlsx",
   "psych", "RColorBrewer"
@@ -24,14 +35,8 @@ deps <- c(
 miss <- setdiff(deps, rownames(installed.packages()))
 if (length(miss)) install.packages(miss, dependencies = TRUE)
 
-# 2. Install the package
-install.packages("C:/path/to/RMetricFish_0.1.0.tar.gz", repos = NULL, type = "source")
-
-# 3. Load the package (opens the interface)
-library(MetricFishR)
+install.packages("path/to/MetricFishR_0.1.0.tar.gz", repos = NULL, type = "source")
 ```
-
-Alternative: put `install_packages.R` (or `Install_packages.bat`) next to the `.tar.gz` file and run it: it installs missing dependencies (CRAN/Bioconductor) and then the package.
 
 ## The 7-step pipeline
 
@@ -67,8 +72,8 @@ identity_matrix_test(my_data[, c(inf$significant, "Group")])
 ## Dependencies
 
 `psych`, `ggcorrplot`, `ggplot2`, `FactoMineR`, `factoextra`, `RColorBrewer`,
-`FSA`, `tcltk`, `ade4`, `MASS`, `dplyr`, `missForest`, `openxlsx`, as well as
-`stats` and `utils` (base R). Requires `rlang >= 1.1.7`.
+`FSA`, `openxlsx`, as well as `tcltk`, `grDevices`, `stats` and `utils` (base R).
+If `rlang` is installed, version `>= 1.1.7` is required.
 
 ## License
 
