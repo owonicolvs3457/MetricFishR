@@ -18,12 +18,11 @@ Package developed by **OWO Nicolas Roland**, an R package adaptation of the
 ```r
 # 1. Install the package from GitHub (dependencies are installed automatically)
 if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes")
-remotes::install_github("owonicolvs3457/MetricFishR")
+remotes::install_github("owonicolvs3457/MetricFishR", upgrade = "never")
 
 # 2. Load the package
 library(MetricFishR)
 ```
-
 
 ## The 7-step pipeline
 
@@ -53,7 +52,8 @@ Each step can also be called independently:
 ```r
 descriptive_stats(my_data)
 inf <- inferential_stats(my_data)
-identity_matrix_test(my_data[, c(inf$significant, "Group")])
+group <- names(my_data)[ncol(my_data)]   # grouping column (last)
+identity_matrix_test(my_data[, c(inf$significant, group)])
 ```
 
 ## Dependencies
